@@ -1,18 +1,18 @@
 <?php
 
 use dokuwiki\plugin\oauth\Adapter;
-use dokuwiki\plugin\oauthdoorkeeper\DoorKeeper;
+use dokuwiki\plugin\oauthzauth\Zauth;
 
 /**
- * Service Implementation for oAuth Doorkeeper authentication
+ * Service Implementation for oAuth Zauth authentication
  */
-class action_plugin_oauthdoorkeeper extends Adapter
+class action_plugin_oauthzauth extends Adapter
 {
 
     /** @inheritdoc */
     public function registerServiceClass()
     {
-        return DoorKeeper::class;
+        return Zauth::class;
     }
 
     /** * @inheritDoc */
@@ -21,15 +21,15 @@ class action_plugin_oauthdoorkeeper extends Adapter
         $oauth = $this->getOAuthService();
         $data = array();
 
-        $url = $this->getConf('baseurl') . '/api/v1/me.json';
+        $url = $this->getConf('baseurl') . '/oauth/api/current_user';
 
 
         $raw = $oauth->request($url);
         $result = json_decode($raw, true);
 
-        $data['user'] = 'doorkeeper-' . $result['id'];
-        $data['name'] = 'doorkeeper-' . $result['id'];
-        $data['mail'] = $result['email'];
+        $data['user'] = $result['username'];
+        $data['name'] = $result['username'];
+        $data['mail'] = $result['username'] . '@zeus.ugent.be';
 
         return $data;
     }
@@ -37,13 +37,13 @@ class action_plugin_oauthdoorkeeper extends Adapter
     /** @inheritDoc */
     public function getLabel()
     {
-        return 'Doorkeeper';
+        return 'Zauth';
     }
 
     /** @inheritDoc */
     public function getColor()
     {
-        return '#b64145';
+        return '#ff7f00';
     }
 
 }

@@ -1,23 +1,9 @@
-oauthdoorkeeper Plugin for DokuWiki
+OAuth plugin for Zauth
 
-Doorkeeper Service for use with the oAuth Plugin
 
-All documentation for this plugin can be found at
-http://www.dokuwiki.org/plugin:oauthgithub
 
-If you install this plugin manually, make sure it is installed in
-lib/plugins/oauthdoorkeeper/ - if the folder is called different it
-will not work!
 
-Please refer to http://www.dokuwiki.org/plugins for additional info
-on how to install plugins in DokuWiki.
-
-The provided Dockerfile can be used to quickly spin up an example
-DoorKeeper installation.
-
-  * docker compose up
-  * http://localhost:3000
-  * login with the given defaults and create a new oAuth app
+Original code: https://github.com/cosmocode/dokuwiki-plugin-oauthdoorkeeper
 
 ----
 Copyright (C) Andreas Gohr <dokuwiki@cosmocode.de>

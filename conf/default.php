@@ -1,11 +1,11 @@
 <?php
 /**
- * Default settings for the oauthdoorkeeper plugin
+ * Default settings for the oauthzauth plugin
  *
  * @author  <>
  */
 
-$conf['baseurl'] = 'http://localhost:3000';
+$conf['baseurl'] = 'https://adams.ugent.be';
 $conf['key'] = '';
 $conf['secret'] = '';
 

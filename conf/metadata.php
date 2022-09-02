@@ -1,6 +1,6 @@
 <?php
 /**
- * Options for the oauthdoorkeeper plugin
+ * Options for the oauthzauth plugin
  *
  * @author  <>
  */
